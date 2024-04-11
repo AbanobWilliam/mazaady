@@ -42,41 +42,39 @@ function Header() {
           <Link href="/" className="hidden lg:block mb-3">
             <Logo />
           </Link>
-          {menuToggle && (
-            <ul
-              data-testid="toggled-menu"
-              className={`${
-                menuToggle
-                  ? "absolute top-12 rounded-lg bg-white w-full left-0"
-                  : "hidden lg:flex lg:items-start"
-              }  lg:static lg:flex lg:rounded-none lg:bg-transparent`}
-            >
-              {menu.map((item, index) => (
-                <li
-                  className={`px-2 py-1 lg:p-0 ${
-                    index !== menu.length - 1 ? "lg:mr-10" : ""
-                  }`}
-                  key={item.id}
+          <ul
+            data-testid="toggled-menu"
+            className={`${
+              menuToggle
+                ? "absolute top-12 rounded-lg bg-white w-full left-0"
+                : "hidden lg:flex lg:items-start"
+            }  lg:static lg:flex lg:rounded-none lg:bg-transparent`}
+          >
+            {menu.map((item, index) => (
+              <li
+                className={`px-2 py-1 lg:p-0 ${
+                  index !== menu.length - 1 ? "lg:mr-10" : ""
+                }`}
+                key={item.id}
+              >
+                <Link
+                  href={item.href}
+                  className={`${
+                    path == item.href
+                      ? "text-primary font-bold after:hidden after:w-full after:h-1.5 after:bg-primary lg:after:block after:rounded-tr-lg after:rounded-tl-lg after:mt-4"
+                      : "text-[#828282] after:hidden after:w-0 after:hover:w-full after:hover:h-1.5 after:hover:bg-primary lg:after:block after:rounded-tr-lg after:rounded-tl-lg after:mt-4"
+                  } text-lg after:transition-all after:ease-in-out after:duration-300`}
                 >
-                  <Link
-                    href={item.href}
-                    className={`${
-                      path == item.href
-                        ? "text-primary font-bold after:hidden after:w-full after:h-1.5 after:bg-primary lg:after:block after:rounded-tr-lg after:rounded-tl-lg after:mt-4"
-                        : "text-[#828282] after:hidden after:w-0 after:hover:w-full after:hover:h-1.5 after:hover:bg-primary lg:after:block after:rounded-tr-lg after:rounded-tl-lg after:mt-4"
-                    } text-lg after:transition-all after:ease-in-out after:duration-300`}
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-              <li className="px-2 py-1 lg:hidden">
-                <Button classes="py-2.5 px-4" showIcon={true}>
-                  Add new product
-                </Button>
+                  {item.title}
+                </Link>
               </li>
-            </ul>
-          )}
+            ))}
+            <li className="px-2 py-1 lg:hidden">
+              <Button classes="py-2.5 px-4" showIcon={true}>
+                Add new product
+              </Button>
+            </li>
+          </ul>
         </div>
         <ul className="flex items-center lg:pb-3">
           <li className="pr-4 lg:px-6 py-0 lg:py-2 lg:border-r lg:border-[#FFEAD2]">

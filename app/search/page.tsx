@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import MainCategory from "../components/MainCategory";
 import OtherOption from "../components/OtherOption";
 import Properties from "../components/Properties";
