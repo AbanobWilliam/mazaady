@@ -29,7 +29,7 @@ function ProductContent({ data }: { data: product }) {
             {data.price}
           </b>
         </p>
-        <p className="text-gray3 text-sm lg:text-lg flex items-center gap-2 flex-wrap lg:flex-nowrap">
+        <div className="text-gray3 text-sm lg:text-lg flex items-center gap-2 flex-wrap lg:flex-nowrap">
           <span className="w-full lg:w-auto">Lot starts in</span>
           <ul className="flex items-center gap-4 flex-wrap">
             <li className="bg-yellow-light rounded-3xl py-1.5 px-4 text-yellow font-bold text-sm lg:text-lg">
@@ -45,7 +45,7 @@ function ProductContent({ data }: { data: product }) {
               <span className="text-[8px] lg:text-sm">Minutes</span>
             </li>
           </ul>
-        </p>
+        </div>
       </div>
       <button
         className="absolute left-4 top-4 bg-white rounded-full p-1 lg:rounded-none lg:p-0 lg:bg-transparent lg:left-auto lg:top-6 lg:right-6"

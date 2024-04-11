@@ -22,7 +22,11 @@ function SubCategories({ categories }: { categories: option[] }) {
         Sub Categories
         <span className="text-red-500">*</span>
       </p>
-      <SearchableSelect data={subCategories} type="subcategories" />
+      <SearchableSelect
+        data={subCategories}
+        type="subcategories"
+        propertyId={0}
+      />
     </div>
   );
 }

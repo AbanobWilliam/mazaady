@@ -9,7 +9,7 @@ function MainCategory({ categories }: { categories: option[] }) {
         <span className="text-red-500">*</span>
       </p>
 
-      <SearchableSelect data={categories} type="categories" />
+      <SearchableSelect data={categories} type="categories" propertyId={0} />
     </div>
   );
 }

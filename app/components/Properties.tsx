@@ -16,7 +16,7 @@ function Properties({ properties }: { properties: option[] }) {
         Properities
         <span className="text-red-500">*</span>
       </p>
-      <SearchableSelect data={newProperties} type="properties" />
+      <SearchableSelect data={newProperties} type="properties" propertyId={0} />
     </div>
   );
 }
