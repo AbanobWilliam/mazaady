@@ -15,7 +15,7 @@ function OtherOption() {
     }
   }, [other]);
   const router = useRouter();
-  const handleOtherInput = (e) => {
+  const handleOtherInput = (e: { target: { value: any } }) => {
     router.push(
       `search?category_id=${category_id}&subcategory_id=${subcategory_id}&property_id=${property_id}&other=${e.target.value}`
     );

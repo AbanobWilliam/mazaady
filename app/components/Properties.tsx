@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { option } from "../ts/option";
 
 function Properties({ properties }: { properties: option[] }) {
-  const [newProperties, setNewProperties] = useState([]);
+  const [newProperties, setNewProperties] = useState<option[]>([]);
   useEffect(() => {
     setNewProperties([...properties, { id: "other", name: "other" }]);
     console.log(properties);

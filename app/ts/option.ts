@@ -1,4 +1,5 @@
 export interface option {
-  id: number;
+  id: number | string;
   name: string;
+  children?: option[];
 }

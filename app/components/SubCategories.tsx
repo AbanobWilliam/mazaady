@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { option } from "../ts/option";
 
 function SubCategories({ categories }: { categories: option[] }) {
-  const [subCategories, setSubCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState<option[] | undefined>([]);
   const params = useSearchParams();
   useEffect(() => {
     const cat_id = params.get("category_id");
@@ -23,7 +23,7 @@ function SubCategories({ categories }: { categories: option[] }) {
         <span className="text-red-500">*</span>
       </p>
       <SearchableSelect
-        data={subCategories}
+        data={subCategories ?? []}
         type="subcategories"
         propertyId={0}
       />
